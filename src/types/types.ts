@@ -1,4 +1,5 @@
 export interface DogBreed {
+    subBreeds: Array<string>
     key: string,
     value: string
   }
@@ -13,3 +14,6 @@ export interface DogBreed {
     message: string
   }
   
+  export interface IParams{
+    type: string
+  }

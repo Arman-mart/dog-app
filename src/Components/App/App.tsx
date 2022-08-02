@@ -25,11 +25,12 @@ function App() {
           </Route>
 
           <Route path='/random/:type' exact>
-                <SubTypeRandom/>
+          <SubTypeImages />
           </Route>
 
           <Route path='/random/:type/:subtype'>
-              <SubTypeImages />
+          <SubTypeRandom/>
+
           </Route>
       </Switch>
 
