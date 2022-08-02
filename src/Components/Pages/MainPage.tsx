@@ -1,4 +1,4 @@
-import { useEffect, useState, } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import './Pages.css';
 import axios from 'axios'
 import { DogBreed, ListAllResponse, ImageResponse } from '../../types/types';
@@ -30,14 +30,14 @@ const MainPage = () => {
         fetchBreedsList();
     }, [])
 
-    const clickHandler = (e: any) => {
-        const dogName: string = e.currentTarget.getAttribute("data-name");
+    const clickHandler = (event: MouseEvent<HTMLDivElement>) => {
+        const dogName = event.currentTarget.getAttribute("data-name") as string;
         const haseSubBreeds = breeds.some((e) => e.key === dogName && e.subBreeds.length !== 0)
-      
+
         haseSubBreeds
             ? history.push(`/types/${dogName}`)
             : history.push(`/random/${dogName}`)
-          
+
 
     }
 

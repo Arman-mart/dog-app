@@ -7,8 +7,11 @@ import { useEffect, useState } from 'react';
 const SubTypeImages = () => {
     const params: IParams = useParams();
     const [data, setData] = useState([]);
+    console.log('render');
+    
 
     const fetchImages = async () => {
+        console.log('fetchImages');
         const { data: { message: value } } : any = await axios.get<ImageResponse>
             (`https://dog.ceo/api/breed/${params.type}/images/random/20`);
 
