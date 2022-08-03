@@ -1,11 +1,9 @@
-import './Pages.css';
-import { useParams } from 'react-router-dom';
-import axios from 'axios'
-import { ImageResponse, IParams } from '../../types/types';
-import { useEffect, useState } from 'react';
+import { IParams, ImageResponse } from "../../types/types";
+import { useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-
-const SubTypeImages = () => {
+const RandomSubType = () => {
     const {type}: IParams = useParams();
     const [data, setData] = useState([]);
     
@@ -39,4 +37,4 @@ const SubTypeImages = () => {
     )
 }
 
-export default SubTypeImages
+export default RandomSubType
